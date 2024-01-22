@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --nutmeg: hsl(14, 45%, 36%);            /* h2 */
+    --dark-raspberry: hsl(332, 51%, 32%);   /* h3 */
+    /* Neutral Colors */
+    --white: hsl(0, 0%, 100%);              /* main container */
+    --rose-white: hsl(330, 100%, 98%);      /* second container */
+    --eggshell: hsl(30, 54%, 90%);          /* body */
+    --light-grey: hsl(30, 18%, 87%);        /* shadow */
+    --wenge-brown: hsl(30, 10%, 34%);       /* regular font */
+    --dark-charcoal: hsl(24, 5%, 18%);      /* bold font */
+    /* Fonts */
+    --font-heads: 'Young Serif', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    background-color: var(--eggshell);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: var(--font-heads);
+    font-size: 2em;
+    padding: 0 0 0.5em 0;
+}
+
+h2 {
+    font-family: var(--font-heads);
+    color: var(--nutmeg);
+    font-size: 1.5em;
+}
+
+h3 {
+    font-family: var(--font-body);
+    color: var(--dark-raspberry);
+    font-size: 1.25em;
+}
+
+p {
+    color: var(--wenge-brown);
+    font-size: 1em;
+}
+
+body.preview-mode .container {
+    box-shadow: 10px 20px 5px 5px var(--light-grey);
+}
+
+.container {
+    max-width: 60%;
+    background-color: var(--white);
+    padding: 1.50rem;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
+}
+
+.container img {
+    max-width: 100%;
+    border-radius: 0.625rem;
+    margin-bottom: 1rem;
+}
+
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.prep-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--rose-white);
+    border-radius: 0.625rem;
+    margin: 1rem auto 1rem;
+    padding: 1.5rem 2rem;
+    line-height: 2;
+}
+
+.prep-container ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+.prep-container ul li::marker {
+    color: var(--dark-raspberry);
+}
+
+.prep-container ul li {
+    color: var(--dark-charcoal);
+}
+
+.prep-container ul li span {
+    font-weight: 700;
+    color: var(--dark-charcoal);
+    margin-left: 1.25rem;
+}
+
+.ingredients-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0.625rem;
+    margin: 1rem auto 1rem;
+    line-height: 2;
+    padding: 1rem;
+}
+
+.ingredients-container ul {
+    padding-left: 5px;
+    margin: 1rem;
+}
+
+.ingredients-container ul li::marker {
+    color: var(--nutmeg);
+}
+
+.ingredients-container ul li {
+    color: var(--dark-charcoal);
+    padding-left: 20px;
+}
+
+.ingredients-container ul li span {
+    font-weight: 700;
+    color: var(--dark-charcoal);
+    margin-left: 1.5rem;
+}
+
+.instructions-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 0.625rem;
+    margin: 1rem auto 1rem;
+    line-height: 2;
+    padding: 1rem;
+}
+
+.instructions-container ol {
+    padding-left: 5px;
+    margin: 1rem;
+}
+
+.instructions-container ol li::marker {
+    color: var(--nutmeg);
+    font-weight: bold;
+}
+
+.instructions-container ol li {
+    color: var(--dark-charcoal);
+    padding-left: 20px;
+}
+
+.instructions-container ol li span {
+    font-weight: 700;
+    color: var(--dark-charcoal);
+    margin-left: 1.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 5px 5px 5px 30px;
+}
+
+tr:not(:last-child) {
+    text-align: left;
+    border-bottom: 2px solid var(--light-grey);
+}
+
+table td:nth-child(2) {
+    color: var(--nutmeg);
+    font-weight: 700;
+}
+
+.container hr {
+    align-self: center;
+    height: 1px;
+    border-top: 1px solid var(--light-grey);
+    width: 95%;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+}
