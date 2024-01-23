@@ -62,7 +62,7 @@ body.preview-mode .container {
 .container {
     max-width: 60%;
     background-color: var(--white);
-    padding: 1.50rem;
+    padding: 1.95rem;
     border-radius: 0.625rem;
     display: flex;
     flex-direction: column;
