@@ -44,12 +44,6 @@ h2 {
     font-size: 1.5em;
 }
 
-h3 {
-    font-family: var(--font-body);
-    color: var(--dark-raspberry);
-    font-size: 1.25em;
-}
-
 p {
     color: var(--wenge-brown);
     font-size: 1em;
@@ -74,6 +68,12 @@ body.preview-mode .container {
     max-width: 100%;
     border-radius: 0.625rem;
     margin-bottom: 1rem;
+}
+
+.h3 {
+    font-family: var(--font-body);
+    color: var(--dark-raspberry);
+    font-size: 1.25em;
 }
 
 .intro-section {
