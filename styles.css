@@ -67,7 +67,7 @@ body.preview-mode .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 4rem auto;
+    margin: 5rem auto;
 }
 
 .container img {
