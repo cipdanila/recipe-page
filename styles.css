@@ -22,7 +22,7 @@
 }
 
 /* ==========================================================================
-   2. Reset & Base Settings (Compact Vertical Constraints)
+   2. Reset & Base Settings
    ========================================================================== */
 *,
 *::before,
@@ -50,10 +50,10 @@ body {
 main {
   flex-grow: 1;
   display: flex;
-  flex-direction: column; /* Stack content vertically with tight spacing */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1.5rem; 
+  padding: 1.5rem; 
 }
 
 /* ==========================================================================
@@ -64,29 +64,29 @@ main {
   max-width: 100%;
   background-color: var(--white);
   margin: 0 auto;
-  padding: 0 0 1.5rem 0; /* Flat layout edges on mobile screens */
+  padding: 0 0 2.5rem 0; /* Padding mărit jos pentru a nu mai fi scurt */
 }
 
-/* Typography defaults optimized for tighter bounding fields */
+/* Typography defaults optimized for Figma specifications */
 h1 {
   font-family: var(--font-heads);
   color: var(--dark-charcoal);
-  font-size: clamp(2rem, 5vw, 2.25rem); 
-  line-height: 1.1;
-  margin-bottom: 1rem;
+  font-size: clamp(2.25rem, 5vw, 2.5rem); 
+  line-height: 1.2;
+  margin-bottom: 1.5rem; /* Margine mărită pentru aerisire */
 }
 
 h2 {
   font-family: var(--font-heads);
   color: var(--nutmeg);
-  font-size: 1.6rem; 
-  font-weight: 400; /* Fixed: Conforms strictly to Young Serif 400 specification */
-  margin-bottom: 1rem;
+  font-size: 1.75rem; 
+  font-weight: 400; /* Conforms strictly to Young Serif 400 specification */
+  margin-bottom: 1.5rem; /* Spatierile dintre secțiuni mărite */
 }
 
 p {
   color: var(--wenge-brown);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ==========================================================================
@@ -96,7 +96,7 @@ p {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 1.75rem; /* Reduced gap below the landing visual block */
+  margin-bottom: 2.5rem; /* Margine optimizată sub imagine */
 }
 
 /* Container inner structural padding wrappers */
@@ -107,14 +107,15 @@ p {
 .nutrition-container {
   padding: 0 2rem;
   width: 100%;
+  margin-bottom: 2rem; /* Spațiere verticală generoasă între secțiuni */
 }
 
 /* Preparation Timeline Info Box */
 .prep-container {
   background-color: var(--rose-white);
   border-radius: 0.75rem;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 1.75rem; /* Padding mărit în cutia roz */
+  margin-bottom: 2rem;
 }
 
 .prep-title {
@@ -125,7 +126,7 @@ p {
   margin-bottom: 1rem;
 }
 
-/* List Formatting Engine (Fixes bullet point shifts and overflow bugs) */
+/* List Formatting Engine (Fixes bullet point shifts) */
 .prep-container ul,
 .ingredients-container ul,
 .instructions-container ol {
@@ -136,8 +137,8 @@ p {
 .prep-container ul li,
 .ingredients-container ul li,
 .instructions-container ol li {
-  margin-bottom: 0.5rem; /* Denser item strings lines spacing */
-  padding-left: 0.5rem; 
+  margin-bottom: 0.75rem; /* Textul din liste are mai mult spațiu acum */
+  padding-left: 0.75rem; 
   color: var(--wenge-brown);
 }
 
@@ -158,7 +159,7 @@ p {
 .container hr {
   border: 0;
   border-top: 1px solid var(--light-grey);
-  margin: 1.5rem 2rem;
+  margin: 0 2rem 2rem 2rem; /* Aliniat la marginile padding-ului intern */
 }
 
 /* ==========================================================================
@@ -178,12 +179,12 @@ p {
 }
 
 .nutrition-table tr:last-child {
-  border-bottom: none; /* Safely kills bottom border rules on last metric data row */
+  border-bottom: none; 
 }
 
 .nutrition-table th,
 .nutrition-table td {
-  padding: 0.75rem 2rem; /* Wider tracking alignment parameters */
+  padding: 1rem 2rem; /* Padding stabilizat în interiorul tabelului */
   text-align: left;
   font-size: 1rem;
 }
@@ -193,7 +194,7 @@ p {
   font-weight: 400;
   color: var(--wenge-brown);
   width: 50%;
-  padding-left: 1rem; /* Snaps tabular data boundary to match above content blocks */
+  padding-left: 1rem; 
 }
 
 .nutrition-table td {
@@ -206,13 +207,17 @@ p {
    6. Footnotes & Project Attribution
    ========================================================================== */
 .attribution-footer {
-  padding: 1.5rem;
-  background-color: var(--eggshell);
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 1.5rem 0 0 0;
+  background-color: transparent;
 }
 
 .attribution {
   font-size: 0.75rem;
   text-align: center;
+  color: var(--wenge-brown);
 }
 
 .attribution a {
@@ -221,12 +226,11 @@ p {
   text-decoration: none;
 }
 
-.attribution a:hover,
-.attribution a:focus-visible {
+.attribution a:hover {
   text-decoration: underline;
 }
 
-/* Screen reader hidden element metrics tracker utility */
+/* Screen reader hidden utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -240,40 +244,23 @@ p {
 }
 
 /* ==========================================================================
-   7. Overriding Footer Attribution for Frontend Mentor Screenshot Bot
-   ========================================================================== */
-.attribution-footer {
-  width: 100%;
-  max-width: var(--container-max-width); /* Limits the footer width to match the main container's max-width */
-  margin: 0 auto;                       /* Centers the footer horizontally */
-  padding: 1.5rem 0 0 0;                /* Adds space only above the footer */
-  background-color: transparent;        /* Removes the background that would extend the card */
-}
-
-.attribution {
-  font-size: 0.75rem;
-  text-align: center;
-  color: var(--wenge-brown);
-}
-
-/* ==========================================================================
-   8. Responsive Layout Scale Overrides (Desktop / Tablet Viewports Focus)
+   7. Responsive Layout Scale Overrides (Desktop / Tablet Viewports Focus)
    ========================================================================== */
 @media (min-width: 640px) {
   body {
-    padding: 6rem 1.5rem 4rem 1.5rem;  /* Reduces empty outer baseline head margins */
+    padding: 6rem 1.5rem 4rem 1.5rem; /* Coborâm cardul perfect ca în design */
   }
 
   .container {
     max-width: var(--container-max-width);
     border-radius: 1.5rem;
-    padding: 2rem; /* Tightened layout inside padding to match structural bounds */
+    padding: 2.5rem; /* Mărit la 40px - Spațiul alb exterior (baza layout-ului) */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
   }
 
   .recipe-hero-image {
-    border-radius: 0.75rem; /* Hero images gets curved edges on wide viewport grids */
-    margin-bottom: 2rem;
+    border-radius: 0.75rem; 
+    margin-bottom: 2.5rem;
   }
 
   .intro-section,
@@ -281,15 +268,11 @@ p {
   .ingredients-container,
   .instructions-container,
   .nutrition-container {
-    padding: 0; /* Reset margins padding to align flawlessly on desktop frames */
+    padding: 0; /* Resetăm paddings pe desktop pentru a se alinia la marginea containerului */
   }
   
   .container hr {
-    margin: 1.5rem 0; /* Expand border metrics cleanly over column widths */
-  }
-
-  .attribution-footer {
-    padding: 1.5rem 0 0 0;
+    margin: 0 0 2rem 0; /* Extindem liniile până la marginea padding-ului de desktop */
   }
 }
 
