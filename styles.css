@@ -22,7 +22,7 @@
 }
 
 /* ==========================================================================
-   2. Reset & Base Settings
+   2. Reset & Base Settings (Compact Vertical Constraints)
    ========================================================================== */
 *,
 *::before,
@@ -52,39 +52,40 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem 0; /* Tighten external wrapper box to avoid high vertical stretching */
 }
 
 /* ==========================================================================
-   3. Layout Container (Mobile-First Configuration)
+   3. Layout Container (Mobile-First Architecture)
    ========================================================================== */
 .container {
   width: 100%;
   max-width: 100%;
   background-color: var(--white);
   margin: 0 auto;
-  padding: 0 0 2.5rem 0; /* No layout padding on mobile sides so image touches edges */
+  padding: 0 0 1.5rem 0; /* Flat layout edges on mobile screens */
 }
 
-/* Typography elements defaults */
+/* Typography defaults optimized for tighter bounding fields */
 h1 {
   font-family: var(--font-heads);
   color: var(--dark-charcoal);
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 5vw, 2.25rem); 
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 h2 {
   font-family: var(--font-heads);
   color: var(--nutmeg);
-  font-size: 1.75rem;
-  font-weight: 400; /* Fixed: Conforms to Young Serif 400 weight standard */
-  margin-bottom: 1.25rem;
+  font-size: 1.6rem; 
+  font-weight: 400; /* Fixed: Conforms strictly to Young Serif 400 specification */
+  margin-bottom: 1rem;
 }
 
 p {
   color: var(--wenge-brown);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* ==========================================================================
@@ -94,10 +95,10 @@ p {
   width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem; /* Reduced gap below the landing visual block */
 }
 
-/* Inner padding wrapper applied specifically to content sections on mobile */
+/* Container inner structural padding wrappers */
 .intro-section,
 .prep-container,
 .ingredients-container,
@@ -107,12 +108,12 @@ p {
   width: 100%;
 }
 
-/* Preparation Box Component */
+/* Preparation Timeline Info Box */
 .prep-container {
   background-color: var(--rose-white);
   border-radius: 0.75rem;
-  padding: 1.75rem 2rem;
-  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .prep-title {
@@ -123,19 +124,19 @@ p {
   margin-bottom: 1rem;
 }
 
-/* List Component Overhaul for precise vector alignment */
+/* List Formatting Engine (Fixes bullet point shifts and overflow bugs) */
 .prep-container ul,
 .ingredients-container ul,
 .instructions-container ol {
   list-style-position: outside;
-  padding-left: 1.5rem; /* Precise bullet tracking clearance */
+  padding-left: 1.5rem;
 }
 
 .prep-container ul li,
 .ingredients-container ul li,
 .instructions-container ol li {
-  margin-bottom: 0.75rem;
-  padding-left: 0.75rem; /* Distance from marker to actual typography string */
+  margin-bottom: 0.5rem; /* Denser item strings lines spacing */
+  padding-left: 0.5rem; 
   color: var(--wenge-brown);
 }
 
@@ -152,15 +153,15 @@ p {
   font-weight: 700;
 }
 
-/* Global dividers rules */
+/* Structural clean horizontal row rulers */
 .container hr {
   border: 0;
   border-top: 1px solid var(--light-grey);
-  margin: 2rem 2rem;
+  margin: 1.5rem 2rem;
 }
 
 /* ==========================================================================
-   5. Semantic Data Table Component (Nutrition Grid)
+   5. Semantic Data Table Component (Nutrition Elements Alignment)
    ========================================================================== */
 .nutrition-container p {
   margin-bottom: 1.5rem;
@@ -176,23 +177,22 @@ p {
 }
 
 .nutrition-table tr:last-child {
-  border-bottom: none; /* Disables terminal line border natively */
+  border-bottom: none; /* Safely kills bottom border rules on last metric data row */
 }
 
 .nutrition-table th,
 .nutrition-table td {
-  padding: 0.75rem 2rem; /* Increased padding left/right for accurate matching */
+  padding: 0.75rem 2rem; /* Wider tracking alignment parameters */
   text-align: left;
-  font-size: 1rem; /* Fits 16px paragraph copy style requirement */
+  font-size: 1rem;
 }
 
-/* Custom weights alignment conforming to design rules */
 .nutrition-table th {
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--wenge-brown);
   width: 50%;
-  padding-left: 1rem; /* Aligns perfectly with the text above the table */
+  padding-left: 1rem; /* Snaps tabular data boundary to match above content blocks */
 }
 
 .nutrition-table td {
@@ -202,7 +202,7 @@ p {
 }
 
 /* ==========================================================================
-   6. Footnotes & Attribution
+   6. Footnotes & Project Attribution
    ========================================================================== */
 .attribution-footer {
   padding: 1.5rem;
@@ -225,7 +225,7 @@ p {
   text-decoration: underline;
 }
 
-/* Screen reader accessibility utility class */
+/* Screen reader hidden element metrics tracker utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -239,40 +239,39 @@ p {
 }
 
 /* ==========================================================================
-   7. Responsive Layout Scale Overrides (Desktop / Tablet Focus)
+   7. Responsive Layout Scale Overrides (Desktop / Tablet Viewports Focus)
    ========================================================================== */
 @media (min-width: 640px) {
   body {
-    padding: 4rem 1.5rem; /* Center template setup space constraints */
+    padding: 2.5rem 1.5rem; /* Reduces empty outer baseline head margins */
   }
 
   .container {
     max-width: var(--container-max-width);
     border-radius: 1.5rem;
-    padding: 2.5rem; /* Uniform high fidelity padding across desktop layout */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Premium layout shadow override */
+    padding: 2rem; /* Tightened layout inside padding to match structural bounds */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
   }
 
   .recipe-hero-image {
-    border-radius: 0.75rem; /* Image rounds up beautifully on desktop grid */
-    margin-bottom: 2.5rem;
+    border-radius: 0.75rem; /* Hero images gets curved edges on wide viewport grids */
+    margin-bottom: 2rem;
   }
 
-  /* Structural paddings normalized to fit standard desktop bounds */
   .intro-section,
   .prep-container,
   .ingredients-container,
   .instructions-container,
   .nutrition-container {
-    padding: 0;
+    padding: 0; /* Reset margins padding to align flawlessly on desktop frames */
   }
   
   .container hr {
-    margin: 2rem 0; /* Expand dividing rules to container boundaries */
+    margin: 1.5rem 0; /* Expand border metrics cleanly over column widths */
   }
 }
 
-/* Accessibility: Respect preference for reduced motion settings */
+/* Accessibility: Safe motion preference tracking */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
