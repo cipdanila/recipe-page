@@ -261,7 +261,7 @@ p {
    ========================================================================== */
 @media (min-width: 640px) {
   body {
-    padding: 2.5rem 1.5rem; /* Reduces empty outer baseline head margins */
+    padding: 6rem 1.5rem 4rem 1.5rem;  /* Reduces empty outer baseline head margins */
   }
 
   .container {
